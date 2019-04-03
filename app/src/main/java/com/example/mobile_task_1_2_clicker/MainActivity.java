@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView mainText;
     Button mainBtn;
+    Button mainBtn2;
+    Button mainBtn3;
+
 
     private long score = 0;
 
@@ -21,19 +24,57 @@ public class MainActivity extends AppCompatActivity {
 
         mainText = (TextView) findViewById(R.id.mainText);
         mainBtn = (Button) findViewById(R.id.button);
+        mainBtn2 = (Button) findViewById(R.id.button2);
+        mainBtn3 = (Button) findViewById(R.id.button3);
 
 
         View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                score ++;
-                String s = "Кликов: " + score;
-                mainText.setText(s.toCharArray(),0, s.length());
+
+                score++;
+                if (score %10 == 2 || score %10 == 3 || score %10 == 4 || score %100 != 12 || score %100 != 13 || score %100 != 14){
+                    String s = "Кнопка нажата : " + score + "раза";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                }
+                else {
+                    String s = "Кнопка нажата : " + score + "раз";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                }
             }
         };
 
         mainBtn.setOnClickListener(clickListener);
 
+        View.OnClickListener clickListener1 = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score --;
+                if (score %10 == 2 || score %10 == 3 || score %10 == 4|| score %100 != 12 || score %100 != 13 || score %100 != 14 ) {
+                    String s = "Кнопка нажата : " + score + "разa";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                }
+                else {
+                    String s = "Кнопка нажата : " + score + "раз";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                }
+            }
+        };
+        mainBtn2.setOnClickListener(clickListener1);
+
+        View.OnClickListener clickListener2 = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score = 0;
+                String s = "Кнопка нажата : "  + score + "раз";
+                mainText.setText(s.toCharArray(),0, s.length());
+            }
+        };
+        mainBtn3.setOnClickListener(clickListener2);
+
+
+
     }
+
 }
 
