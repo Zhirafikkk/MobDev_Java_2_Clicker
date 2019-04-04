@@ -33,14 +33,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 score++;
-                if (score %10 == 2 || score %10 == 3 || score %10 == 4 || score %100 != 12 || score %100 != 13 || score %100 != 14){
-                    String s = "Кнопка нажата : " + score + "раза";
+                if (score == 12 || score == 13 || score == 14){
+                    String s = "Кнопка нажата : " + score + " раз";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                                    }
+                else if (score %10 == 2 || score %10 == 3 || score %10 == 4 ){
+                    String s = "Кнопка нажата : " + score + " раза";
                     mainText.setText(s.toCharArray(), 0, s.length());
                 }
-                else {
-                    String s = "Кнопка нажата : " + score + "раз";
+                else if (score  == 1||score  >=5  ){
+                    String s = "Кнопка нажата : " + score + " раз";
                     mainText.setText(s.toCharArray(), 0, s.length());
                 }
+
             }
         };
 
@@ -50,12 +55,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 score --;
-                if (score %10 == 2 || score %10 == 3 || score %10 == 4|| score %100 != 12 || score %100 != 13 || score %100 != 14 ) {
-                    String s = "Кнопка нажата : " + score + "разa";
+                if (score == 12 || score == 13 || score == 14){
+                    String s = "Кнопка нажата : " + score + " раз";
                     mainText.setText(s.toCharArray(), 0, s.length());
                 }
-                else {
-                    String s = "Кнопка нажата : " + score + "раз";
+                else if (score %10 == 2 || score %10 == 3 || score %10 == 4) {
+                    String s = "Кнопка нажата : " + score + " разa";
+                    mainText.setText(s.toCharArray(), 0, s.length());
+                }
+                else if (score  == 1||score  >=5  ){
+                    String s = "Кнопка нажата : " + score + " раз";
                     mainText.setText(s.toCharArray(), 0, s.length());
                 }
             }
@@ -66,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 score = 0;
-                String s = "Кнопка нажата : "  + score + "раз";
+                String s = "Кнопка нажата : "  + score + " раз";
                 mainText.setText(s.toCharArray(),0, s.length());
             }
         };
